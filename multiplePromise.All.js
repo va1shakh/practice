@@ -6,7 +6,8 @@ const promise1 = new Promise((resolve, reject) => {
 })
 const promise2 = new Promise((resolve, reject) => {
     setTimeout(() => {
-        reject('something went wrong');
+        const randomNo = Math.random();
+        randomNo > 0.5 ? resolve('Promise 2 has resolved'):reject('Something went wrong');
     }, 2000)
 })
 const promise3 = new Promise((resolve, reject) => {
