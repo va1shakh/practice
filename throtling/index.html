@@ -1,0 +1,33 @@
+<!-- simple example for debouncing -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttling</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+        .output{
+            position: fixed;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <h3 class="output" style="color: white; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Update</h3>
+    <script>
+       let output = document.querySelector('.output');
+       let scrolling = true;
+       window.addEventListener('scroll', () => {
+            if(scrolling === true){
+                output.innerText = window.scrollY;
+                scrolling = false;
+                setTimeout(() => {
+                    scrolling = true;
+                }, 1000)
+            }
+       });
+    </script>
+</body>
+</html>
