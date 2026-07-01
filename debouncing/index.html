@@ -1,0 +1,24 @@
+<!-- simple example for debouncing -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing</title>
+</head>
+<body style="background-color: black;">
+    <input class="input" style="background-color: rgb(232, 255, 243);" type="search" placeholder="Type anything">
+    <h3 class="output" style="color: white; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Output</h3>
+    <script>
+        let input = document.querySelector('.input');
+        let output = document.querySelector('.output');
+        let timer;
+        input.addEventListener('input', () => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                output.innerText = input.value;
+            }, 500)
+        });
+    </script>
+</body>
+</html>
